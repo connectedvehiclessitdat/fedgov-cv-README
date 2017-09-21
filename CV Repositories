@@ -1,0 +1,75 @@
+fedgov-cv-apps
+	Library that provides run a forwarder application, poller application, or sender application.
+
+fedgov-cv-asn1
+	Library that provides helper classes to work with generated ASN.1 J2735 code.
+
+fedgov-cv-common
+	Library containing common classes used by several other CV projects.
+
+fedgov-cv-datasink-mongodb
+	A DigitalEdge plug-in defining the MongoDB datasink used by the SDW and SDPC systems.
+
+fedgov-cv-datasink-object-discovery
+	A DigitalEdge plug-in defining the datasink controlling object discovery used by the Dist/ORDS system.
+
+fedgov-cv-datasink-object-registrar
+	A DigitalEdge plug-in defining the datasink controlling the registration to the Dist/ORDS system.
+
+fedgov-cv-datasink-query-processor
+	A DigitalEdge plug-in defining the datasink that process query requests as part of the ORDS system.
+
+fedgov-cv-datasink-router
+	A DigitalEdge plug-in defining the PubSub server and the datasink that feeds it as part of the SDC system.
+
+fedgov-cv-datasink-subscription
+	A DigitalEdge plug-in defining the datasink controlling the processing of subscriptions to the Dist/ORDS system.
+
+fedgov-cv-desktop-apps
+	Library defining the Desktop Applications that can use the applications contained in the fedgov-cv-apps library.
+
+fedgov-cv-documents
+	A repository containing various CV Systems documentation.
+
+fedgov-cv-jms-subscriber
+	Library containing code on subscribing to a JMS Queue.
+
+fedgov-cv-parent
+	Maven parent POM for all CV projects.
+
+fedgov-cv-parser-j2735
+	A DigitalEdge plug-in defining the parser used by DigitalEdge data models to decode ASN.1 J2735 messages.
+
+fedgov-cv-private-resources-sample
+	A sample project demonstrating the layout of the private-resources library that other projects may rely on to retrieve private resources such as certificates, keystores, passwords, etc.
+
+fedgov-cv-processor-broadcast-instructions
+	A DigitalEdge plug-in used to enrich the advisory situation data with broadcast instructions.
+
+fedgov-cv-processor-geojson
+	A DigitalEdge plug-in used to add a GeoJSON object to the data.
+
+fedgov-cv-README
+	A repository containing repository descriptions as well as build instructions and dependencies.
+
+fedgov-cv-security
+	Library that provides support for working with 2009 version of the IEEE 1609.2 security standards and CV Certificates.
+
+fedgov-cv-security-2016
+	Library that provides support for working with 2016 version of the IEEE 1609.2 security standards and SCMS Certificates.
+	This library is currently not in use on the systems.
+
+fedgov-cv-security-de
+	Library that provides extended DigitalEdge support for working with IEEE 1609.2 Messages and CV Certificates.
+
+fedgov-cv-system-monitor
+	Command line application that provides external monitoring, alerting, and reporting of the systems' uptime.
+
+fedgov-cv-transport-listener
+	A DigitalEdge plug-in that defines a transport that listens for data from a JMS Topic.  Used in the SDW and SDPC.
+
+fedgov-cv-transport-udp
+	A DigitalEdge plug-in that defines a transport that receives UDP data. Used in the SDC and SDW.
+
+fedgov-cv-websocket
+	Library for Websockets including a Websocket client and server.

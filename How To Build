@@ -1,0 +1,72 @@
+=================================================================================================================================
+Build Dependencies:
+=================================================================================================================================
+The code is written in Java. Java 1.8 is required.
+
+All components are built using Apache Maven, version 3.3.3 or newer.
+
+The projects are located at https://github.com/connectedvehiclessitdat.
+
+Several of the projects depend on the fedgov-cv-private-resources or fedgov-cv-private-resources-webapp projects.  These 
+projects contain private information that is not to be made public, such as passwords, usernames, keystores, truststores, etc.
+These projects are not publicly available and must be created locally for anyone wishing to build the code.  The
+fedgov-cv-private-resources-sample and fedgov-cv-private-resources-webapp-sample are available to show how the projects
+are formatted and provide the source code for the helper class in the private resource projects that is used to pull the private
+resources from the JAR after it is compiled.
+
+There are a few projects that depend on projects beginning with fedgov-cv-asn1-generated-*.  The ASN.1 Generated projects contain
+code that was generated using OSS ASN.1 Studio and is not allowed to be distributed per the licensing with OSS.  For anyone wishing
+to build the code, there must be similar projects containing all the classes as defined in the ASN.1 specifications, as well as a
+class to encode/decode the PDUs from/to UPER.
+
+Many of the projects depend on the Parent POM located in the fedgov-cv-parent project. This project must be available at the
+same directory level as the other projects.
+
+
+=================================================================================================================================
+Build Steps:
+=================================================================================================================================
+
+The Parent POM project should be built first:
+
+	fedgov-cv-parent
+
+Several projects also depend on the private resources. These projects should be built next (Note: order doesn't matter here):
+
+	fedgov-cv-private-resources
+	fedgov-cv-private-resources-webapp
+	fedgov-cv-private-resources-non-cas-webapp
+
+Since most projects use ASN.1 generated code, the fedgov-cv-asn1-generated-* projects should be third to be built:
+
+	fedgov-cv-asn1-generated-j2735
+	fedgov-cv-asn1-generated-ieee1609dot2
+	fedgov-cv-asn1-generated-scms
+
+Since many of the projects depend on the common library, it is next to be built. The order in which the projects should be
+built for the common library is:
+
+	fedgov-cv-security
+	fedgov-cv-security-de
+	fedgov-asn1-generated-j2735
+	fedgov-asn1
+	fedgov-cv-common
+
+Another dependency that is common among several projects is the use of websockets. It is recommended that the websocket related
+projects are next to be built:
+
+	fedgov-cv-websocket
+
+At this point, the most common dependencies have been built and most of the remaining projects should be able to be compiled
+without having to compile any other projects.
+
+If there is ever any confusion on what is required to build a project, that can be determined by looking at the project's pom.xml
+file.  This file will contain a list of dependencies that are required to build the project.  Any dependency that contains the
+groupId of gov.usdot is a project that must be available and built prior to the current project being built.  Note that the
+dependencies listed in the pom.xml is not the complete picture of what projects or what order projects must be built to build the
+current project.  Rather the dependencies in the pom.xml are the immediate dependencies on which the current project relies. There
+may be a dependency hierarchy on which some of the dependencies themselves rely on.  For example, the fedgov-cv-common project
+depends on the fedgov-cv-asn1 project, and so, it is listed in the fedgov-cv-common's pom.xml.  However, the fedgov-cv-asn1 project
+in turn depends on the fedgov-cv-asn1-generated-j2735 project.  The fedgov-cv-asn1-generated-j2735 dependency will not be explicitly
+stated in the fedgov-cv-common's pom.xml.  Instead, to see that it is needed, the fedgov-cv-asn1's pom.xml must be viewed.  Therefore,
+to determine the actual build order of a project, multiple pom.xml's may need to be viewed to figure out the dependency hierarchy.
