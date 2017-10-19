@@ -34,6 +34,9 @@ fedgov-cv-documents
 fedgov-cv-jms-subscriber
 	Library containing code on subscribing to a JMS Queue.
 
+fedgov-cv-message-validator-webapp
+	Webapp to validate ASN.1 messages by checking for accuracy against the specifications and standards prior to depositing into a warehouse.
+
 fedgov-cv-parent
 	Maven parent POM for all CV projects.
 
@@ -71,5 +74,14 @@ fedgov-cv-transport-listener
 fedgov-cv-transport-udp
 	A DigitalEdge plug-in that defines a transport that receives UDP data. Used in the SDC and SDW.
 
+fedgov-cv-webfragment-websocket
+	Library containing a simple WebSocket Server implemented as a WebFragment.
+
 fedgov-cv-websocket
 	Library for Websockets including a Websocket client and server.
+
+fedgov-cv-whtools-client
+	Application containing a client to connect to the CV Warehouses.
+
+fedgov-cv-whtools-webapp
+	Webapp providing tools to access the Connected Vehicle Warehouses
