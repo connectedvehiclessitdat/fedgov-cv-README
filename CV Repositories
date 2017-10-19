@@ -4,6 +4,9 @@ fedgov-cv-apps
 fedgov-cv-asn1
 	Library that provides helper classes to work with generated ASN.1 J2735 code.
 
+fedgov-cv-casadmin-webapp
+	Webapp that contains the code to allow users to request accounts for CV Tools.
+
 fedgov-cv-common
 	Library containing common classes used by several other CV projects.
 
@@ -64,6 +67,9 @@ fedgov-cv-security-2016
 
 fedgov-cv-security-de
 	Library that provides extended DigitalEdge support for working with IEEE 1609.2 Messages and CV Certificates.
+
+fedgov-cv-sso-webapp
+	Webapp that contains the configuration and code to run CAS for authentication to allow access to other webapps.
 
 fedgov-cv-system-monitor
 	Command line application that provides external monitoring, alerting, and reporting of the systems' uptime.
