@@ -34,7 +34,6 @@ The Parent POM project should be built first:
 Several projects also depend on the private resources. These projects should be built next (Note: order doesn't matter here):
 
 	fedgov-cv-private-resources
-	fedgov-cv-private-resources-webapp
 	fedgov-cv-private-resources-non-cas-webapp
 
 Since most projects use ASN.1 generated code, the fedgov-cv-asn1-generated-* projects should be third to be built:
